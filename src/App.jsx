@@ -17,17 +17,17 @@ const PRODUTOS = [
   { 
     nome: "Ração Super Premium Cães (15kg)", 
     preco: "R$ 199,90", 
-    image: "/src/img/cao.jpeg" // <--- ADICIONADO AQUI
+    image: "../img/cao.jpeg" // <--- ADICIONADO AQUI
   },
   { 
     nome: "Ração Premium Gatos Adultos (10kg)", 
     preco: "R$ 89,90", 
-    image: "/src/img/gato.png" // <--- ADICIONADO AQUI
+    image: "../img/gato.png" // <--- ADICIONADO AQUI
   },
   { 
     nome: "Ração Filhotes Light (3kg)", 
     preco: "R$ 39,90", 
-    image: "/src/img/filhotes.jpeg" // <--- ADICIONADO AQUI
+    image: "../img/filhotes.jpeg" // <--- ADICIONADO AQUI
   }
 ];
 

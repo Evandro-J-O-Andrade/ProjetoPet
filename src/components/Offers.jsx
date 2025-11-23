@@ -9,7 +9,7 @@ function Offers({ openWhats }) {
  <div className="oferta-box paw-card">
         {/* ⬅️ NOVO CÓDIGO DE IMAGEM */}
         <img 
-            src="/src/img/aminais.png" 
+            src="../img/aminais.png" 
             alt="Oferta Especial de Ração" 
             className="oferta-image" 
         />
