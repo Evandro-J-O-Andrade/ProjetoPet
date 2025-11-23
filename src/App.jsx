@@ -40,7 +40,7 @@ const DEPOIMENTOS = [
 const FAQS = [
   { pergunta: "Qual o prazo de entrega?", resposta: "Trabalhamos com entrega expressa em até 90 minutos, dependendo da região." },
   { pergunta: "Quais são as formas de pagamento?", resposta: "Pix, cartões de crédito e débito (na entrega) e dinheiro." },
-  { pergunta: "Vocês trabalham com rações especiais?", resposta: "Sim! Possuímos linhas premium, super premium e terapêuticas." },
+  { pergunta: "Vocês trabalham com rações especiais!?", resposta: "Sim! Possuímos linhas premium, super premium e terapêuticas." },
 ];
 
 // --- COMPONENTE PRINCIPAL APP ---
