@@ -1,5 +1,11 @@
 import React from "react";
 
+// Importações corretas para Vite
+import cao from "../img/cao.jpeg";
+import cao2 from "../img/cao2.jpg";
+import coracaopata from "../img/coracaopata.png";
+import cachorro from "../img/cachorro.jpg";
+
 function Benefits() {
   return (
     <section className="beneficios">
@@ -7,19 +13,38 @@ function Benefits() {
 
       <div className="beneficios-grid">
         <div className="card paw-card">
-          <img src="src/img/cao.jpeg" alt="Cachorro correndo" className="card-image" /> {/* Adicione sua imagem aqui */}
+          <img 
+            src={cao} 
+            alt="Cachorro correndo" 
+            className="card-image" 
+          />
           Entrega Super Rápida
         </div>
+
         <div className="card paw-card">
-          <img src="src/img/cao2.jpg" alt="Gato no WhatsApp" className="card-image" /> {/* Adicione sua imagem aqui */}
+          <img 
+            src={cao2} 
+            alt="Gato no WhatsApp" 
+            className="card-image" 
+          />
           Atendimento Humano pelo WhatsApp
         </div>
+
         <div className="card paw-card">
-          <img src="src/img/coracaopata.png" alt="Dinheiro com pata" className="card-image" /> {/* Adicione sua imagem aqui */}
+          <img 
+            src={coracaopata} 
+            alt="Dinheiro com pata" 
+            className="card-image" 
+          />
           Preços Especiais de Verdade
         </div>
+
         <div className="card paw-card">
-          <img src="src/img/cachorro.jpg" alt="Cartões de pagamento" className="card-image" /> {/* Adicione sua imagem aqui */}
+          <img 
+            src={cachorro} 
+            alt="Cartões de pagamento" 
+            className="card-image" 
+          />
           Pagamentos Flexíveis
         </div>
       </div>
