@@ -9,7 +9,7 @@ function About() {
       <div className="about-content paw-card">
         {/* Adicione uma imagem ou ícone que represente "família/cuidado" */}
         <img 
-            src="/src/img/patacorcao.jpg" 
+            src="src/img/patacorcao.jpg" 
             alt="Coração com Pata" 
             className="about-icon" 
         />
