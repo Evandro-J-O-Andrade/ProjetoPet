@@ -1,0 +1,679 @@
+/* =============================
+    RESET E BASE
+============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* =============================
+    TEMA DARK + PATINHAS (FUNDO)
+============================= */
+
+body {
+  background-color: #0a0d12; /* Fundo escuro base */
+  color: #f4f4f4; /* Cor do texto padrão */
+  background-image: url("/src/img/patinhas.jpg"); /* Patinhas no fundo do BODY */
+  background-repeat: repeat;
+  background-size: 160px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.75); /* Camada escura para manter o contraste */
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 2;
+}
+
+/* Garante que todas as seções (além do footer) tenham fundo transparente e texto claro */
+section {
+    background: transparent;
+    color: #f4f4f4; 
+}
+
+/* =============================
+    HEADER
+============================= */
+
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffbf00;
+}
+
+.header nav a {
+  margin: 0 14px;
+  color: #eee;
+  font-weight: 600;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.header nav a:hover {
+  opacity: 1;
+  color: #ffbf00;
+}
+
+.btn-whats {
+  background: #25d366;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(37,211,102,0.6);
+}
+
+
+/* =============================
+    TEMA DARK + PATINHAS (FUNDO)
+============================= */
+
+body {
+  background-color: #0a0d12;
+  color: #f4f4f4;
+  /* Patinhas no fundo do BODY, mais visíveis */
+  background-image: url("/src/img/patinhas.jpg");
+  background-repeat: repeat;
+  /* AUMENTAMOS O TAMANHO DA PATA AQUI */
+  background-size: 250px; 
+}
+
+/* ... (O restante do seu CSS continua o mesmo) ... */
+/* =============================
+    HERO — COM IMAGEM DE CACHORRO E GATO
+============================= */
+
+.hero {
+  width: 100%;
+  min-height: 560px;
+  padding: 130px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Para centralizar conteúdo se precisar */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGEM DE FUNDO DO HERO (CÃO E GATO) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  /* Substitua 'banner.jpg' pela sua imagem de cães e gatos */
+  background: url("/src/img/caoegato.jpg") center/cover no-repeat; 
+  filter: brightness(0.6) saturate(0.8); /* Escurece e sutilmente dessatura */
+  animation: bg-pan 30s infinite alternate linear; /* ANIMAÇÃO SUTIL */
+}
+
+/* ANIMAÇÃO DE FUNDO DO HERO */
+@keyframes bg-pan {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+.hero h1 {
+  font-size: 3.4em;
+  font-weight: 900;
+  text-shadow: 0 0 18px rgba(255,255,255,0.18);
+  position: relative; /* Para ficar acima do fundo animado */
+  z-index: 1;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-size: 1.25em;
+  opacity: 0.9;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* Para ficar acima do fundo animado */
+  z-index: 1;
+}
+
+.cta-principal {
+  margin-top: 22px;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: none;
+  background: #ff0066;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 18px rgba(255,0,102,0.6);
+  cursor: pointer;
+  position: relative; /* Para ficar acima do fundo animado */
+  z-index: 1;
+}
+
+.cta-principal:hover {
+  background: #e6005c;
+}
+
+/* =============================
+    CARDS (MODELO BASE) - MAIS VIDA
+============================= */
+
+.paw-card {
+  /* Cor de fundo mais opaca para não ficar "transparente demais" */
+  background: rgba(255,255,255,0.1); /* Mais visível que 0.05 */
+  border: 1px solid rgba(255,255,255,0.15); /* Borda mais forte */
+  padding: 26px;
+  border-radius: 18px; 
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6); /* Sombra mais intensa */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(3px);
+  display: flex; /* Para organizar o conteúdo do card */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f4f4f4; /* Garante texto claro */
+}
+
+.paw-card:hover {
+  transform: translateY(-8px) scale(1.03); /* Mais impacto no hover */
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8), 0 12px 35px rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 191, 0, 0.8); /* Borda amarela mais visível */
+  background: rgba(255, 255, 255, 0.15); /* Fundo um pouco mais claro no hover */
+}
+
+/* ESTILO PARA IMAGENS DENTRO DOS CARDS */
+.card-image {
+    width: 100px; /* Tamanho da imagem */
+    height: 100px;
+    border-radius: 50%; /* Imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
+    border: 3px solid #ffbf00; /* Borda amarela na imagem */
+    box-shadow: 0 0 10px rgba(255, 191, 0, 0.5); /* Brilho na imagem */
+}
+
+
+/* =============================
+    BENEFÍCIOS - AJUSTE DE ESPAÇAMENTO
+============================= */
+
+.beneficios {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.beneficios-grid {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza a grade */
+  gap: 35px; /* Aumenta o espaçamento entre os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem linha */
+  margin-top: 40px; /* Espaço abaixo do título */
+}
+
+.card { 
+    width: 250px; 
+    min-height: 200px; /* Altura mínima para os cards */
+    padding: 35px 25px; /* Mais padding */
+}
+
+
+/* =============================
+    PRODUTOS - AJUSTE DE ESPAÇAMENTO
+============================= */
+
+.produtos {
+  width: 100%;
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.lista-produtos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px; /* Aumenta o espaçamento entre os produtos */
+  margin-top: 40px; /* Espaço abaixo do título */
+}
+
+.produto-card {
+  width: 280px; /* Ligeiramente maior */
+  min-height: 350px; /* Altura mínima para o card de produto */
+}
+
+.produto-img {
+  width: 100%;
+  height: 180px; /* Altura maior para a imagem do produto */
+  background: #2a2a2a; /* Fundo para imagem placeholder */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover; /* Para as imagens reais */
+}
+
+.preco {
+  font-size: 24px; /* Preço um pouco maior */
+  font-weight: 900;
+  color: #ffbf00;
+  margin: 15px 0;
+}
+
+/* ... (Resto do seu CSS, como Ofertas, Depoimentos, FAQ, Footer, etc.) ... */
+
+/* =============================
+    OFERTAS / DEPOIMENTOS / FAQ - AJUSTE DE ESPAÇAMENTO
+============================= */
+
+.oferta-box,
+.depoimento-card,
+.faq-item {
+  width: 380px; /* Cards maiores */
+  margin: 20px auto; /* Espaçamento e centralização */
+}
+
+/* DEPOIMENTOS */
+.depoimentos-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px; /* Espaçamento maior */
+    margin-top: 40px;
+}
+.depoimento-card {
+    max-width: 350px;
+    padding: 30px;
+}
+
+/* FAQ */
+.faq-container {
+    max-width: 800px;
+    margin-top: 40px;
+}
+.faq-item {
+    margin-bottom: 15px; /* Espaçamento entre itens do FAQ */
+}
+
+/* =============================
+    FOOTER
+============================= */
+
+.footer {
+  background: #000; 
+  padding: 40px;
+  text-align: center;
+  color: #ddd;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #00AEEF;
+    font-size: 28px;
+    margin: 0 18px;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+                 0 0 10px #00AEEF;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.15);
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #00AEEF,
+                 0 0 30px #00AEEF;
+}
+
+
+/* =============================
+    WHATSAPP FLOAT
+============================= */
+
+.floating-whats {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  padding: 16px 22px;
+  background: #25d366;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(37,211,102,0.7);
+  animation: pulse 2s infinite;
+  z-index: 1000;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* =============================
+    RESPONSIVIDADE
+============================= */
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2em; }
+  .beneficios-grid,
+  .lista-produtos,
+  .depoimentos-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Espaçamento menor no mobile */
+  }
+  .produto-card,
+  .card,
+  .depoimento-card,
+  .oferta-box,
+  .faq-item {
+    width: 90%;
+    max-width: 400px; /* Limita largura máxima no mobile */
+    margin: 10px auto; /* Centraliza */
+  }
+}/* =============================
+    CARDS (MODELO BASE)
+============================= */
+.paw-card {
+  /* ... (outras propriedades) ... */
+  display: flex; 
+  flex-direction: column;
+  align-items: center; /* Centraliza itens na horizontal (para a maioria dos cards) */
+  justify-content: center;
+  text-align: center; /* CENTRALIZA O TEXTO DENTRO DO CARD */
+  color: #f4f4f4; 
+  /* ... (outras propriedades) ... */
+}
+
+/* Garante que o texto nas seções de conteúdo também esteja centralizado (títulos e parágrafos) */
+.beneficios,
+.ofertas,
+.depoimentos,
+.sobre,
+.faq {
+    text-align: center; /* Garante que os H2 e P estejam centralizados */
+}
+
+/* FAQ é uma exceção onde o conteúdo interno do item deve ser alinhado */
+.faq-container {
+    text-align: left; /* O CONTAINER GERAL DO FAQ DEVE TER TEXTO ALINHADO À ESQUERDA */
+    /* O texto dentro de .faq-resposta e .faq-pergunta deve estar alinhado à esquerda */
+}/* =============================
+    OFERTAS - ESTILO DA CAIXA E IMAGEM
+============================= */
+
+.ofertas {
+    padding: 70px 40px;
+}
+
+.oferta-box {
+  width: 90%;
+  max-width: 650px; /* Aumentamos o tamanho da caixa de oferta */
+  margin: 40px auto;
+  padding: 30px;
+  
+  /* Permite que a imagem e o texto fiquem na mesma linha */
+  display: flex; 
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 25px; /* Espaço entre a imagem e o texto */
+  
+  font-size: 1.2em; /* Texto maior para a oferta */
+  text-align: left; /* Alinha o texto da oferta à esquerda */
+}
+
+/* Estilo para a imagem dentro da caixa de oferta */
+.oferta-image {
+    width: 50%; /* Tamanho do ícone/imagem */
+    height: 50%;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0; /* Impede a imagem de encolher */
+}
+
+/* =============================
+    SEÇÃO SOBRE NÓS (ABOUT)
+============================= */
+.sobre {
+    padding: 70px 40px;
+    text-align: center;
+}
+
+.about-content {
+    /* Limitamos a largura máxima para o texto não ficar muito longo */
+    max-width: 750px; 
+    margin: 40px auto; /* Centraliza a caixa */
+    padding: 40px; 
+    
+    /* Configurações de layout flex para alinhar o ícone e o texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.about-icon {
+    width: 80px; /* Tamanho do ícone de coração/pata */
+    height: 80px;
+    margin-bottom: 20px;
+}
+/* =============================
+    SEÇÃO FAQ (Dúvidas Rápidas)
+============================= */
+
+.faq {
+    padding: 70px 40px;
+    text-align: center; /* Centraliza apenas o <h2> */
+}
+
+.faq-container {
+    max-width: 850px; /* Define uma largura máxima para o bloco */
+    margin: 40px auto; /* Centraliza o container na página */
+}
+
+.faq-item {
+    margin-bottom: 15px; /* Espaço entre cada card de FAQ */
+    /* O paw-card já cuida do fundo e brilho, mas vamos redefinir o layout: */
+    padding: 0; /* Remove padding padrão para o botão preencher */
+    overflow: hidden; 
+    text-align: left; /* FUNDAMENTAL: Alinha o texto da pergunta e resposta à esquerda */
+    display: block; /* Anula o display: flex padrão do paw-card */
+}
+
+.faq-pergunta {
+    width: 100%;
+    padding: 20px 25px;
+    background: transparent; /* Usa o fundo do paw-card */
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #f4f4f4;
+    
+    /* Layout da Pergunta: Texto à esquerda e Ícone à direita */
+    display: flex;
+    justify-content: space-between; /* Espalha a pergunta e o ícone */
+    align-items: center;
+    text-align: left; /* Garante que o texto da pergunta comece na esquerda */
+}
+
+.faq-pergunta:hover {
+    background: rgba(255, 255, 255, 0.05); /* Efeito sutil no hover */
+}
+
+.faq-icone {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffbf00; /* Cor amarela para o ícone de + / - */
+    min-width: 20px; /* Garante que o ícone tenha espaço */
+}
+
+.faq-resposta {
+    padding: 0 25px 20px 25px; /* Padding nas laterais e embaixo (o topo é a pergunta) */
+    font-size: 1em;
+    opacity: 0.8;
+    max-height: 500px; /* Necessário para a animação de abrir/fechar */
+    transition: all 0.4s ease-out;
+}/* =============================
+    AJUSTE NO BOTÃO CTA SECUNDÁRIO (PRODUTOS)
+============================= */
+
+.cta-secundario {
+    /* Adiciona uma margem superior para afastar o botão da lista de produtos */
+    margin-top: 50px; 
+    /* Outros estilos CTA que você já deve ter */
+    padding: 14px 34px;
+    border-radius: 999px;
+    border: 2px solid #ffbf00; /* Exemplo: borda amarela */
+    background: transparent;
+    color: #ffbf00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-secundario:hover {
+    background: #ffbf00;
+    color: #000;
+}
+/* =============================
+    RESPONSIVIDADE GERAL
+============================= */
+
+@media (max-width: 768px) {
+    /* 1. LAYOUT GERAL E SEÇÕES */
+    
+    /* Reduz o padding lateral em todas as seções para celular */
+    .header,
+    .beneficios,
+    .produtos,
+    .ofertas,
+    .depoimentos,
+    .sobre,
+    .faq,
+    .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* 2. HEADER */
+    .header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        /* Garante que o header fique compacto */
+        gap: 10px; 
+    }
+
+    .logo {
+        font-size: 20px; /* Logo menor */
+    }
+
+    /* Esconde o menu de navegação, pois ele não caberia em telas pequenas */
+    .header nav {
+        display: none;
+    }
+
+    .btn-whats {
+        font-size: 0.8em;
+        padding: 8px 14px;
+        white-space: nowrap; /* Evita que o texto quebre */
+    }
+
+    /* 3. HERO */
+    .hero {
+        min-height: 400px;
+        padding: 80px 15px; /* Reduz o padding vertical */
+    }
+
+    .hero h1 { 
+        font-size: 2.2em; /* Título menor */
+    }
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* 4. GRID DE CARDS (PRODUTOS, BENEFÍCIOS, DEPOIMENTOS) */
+    .beneficios-grid,
+    .lista-produtos,
+    .depoimentos-grid {
+        flex-direction: column; /* Coloca cards um abaixo do outro */
+        align-items: center;
+        gap: 25px; 
+    }
+    
+    /* Garante que todos os cards preencham a largura da tela (com limite) */
+    .produto-card,
+    .card,
+    .depoimento-card,
+    .oferta-box,
+    .faq-item {
+        width: 100%; /* Ocupa 100% da largura do container */
+        max-width: 450px; /* Limita a largura máxima */
+        margin: 10px auto; 
+    }
+    
+    /* 5. SEÇÃO DE OFERTAS (Verticalização) */
+    .oferta-box {
+        flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
+        text-align: center; /* Centraliza o texto */
+    }
+    .oferta-image {
+        /* Garante que a imagem/ícone da oferta tenha um tamanho decente */
+        width: 80px; 
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    /* 6. SOBRE NÓS */
+    .about-content {
+        padding: 25px 20px;
+    }
+
+    /* 7. FAQ */
+    .faq-pergunta {
+        font-size: 1em; /* Fonte um pouco menor */
+        padding: 18px 20px;
+    }
+    .faq-resposta {
+        padding: 0 20px 18px 20px;
+    }
+}
