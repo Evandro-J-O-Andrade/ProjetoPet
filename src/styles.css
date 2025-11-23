@@ -23,7 +23,7 @@ html, body, #root {
 body {
   background-color: #0a0d12; /* Fundo escuro base */
   color: #f4f4f4; /* Cor do texto padrão */
-  background-image: url("../img/patinhas.jpg"); /* Patinhas no fundo do BODY */
+  background-image: url("src/img/patinhas.jpg"); /* Patinhas no fundo do BODY */
   background-repeat: repeat;
   background-size: 160px;
 }
@@ -108,7 +108,7 @@ body {
   background-color: #0a0d12;
   color: #f4f4f4;
   /* Patinhas no fundo do BODY, mais visíveis */
-  background-image: url("../img/patinhas.jpg");
+  background-image: url("src/img/patinhas.jpg");
   background-repeat: repeat;
   /* AUMENTAMOS O TAMANHO DA PATA AQUI */
   background-size: 250px; 
@@ -139,7 +139,7 @@ body {
   inset: 0;
   z-index: -2;
   /* Substitua 'banner.jpg' pela sua imagem de cães e gatos */
-  background: url("../img/caoegato.jpg") center/cover no-repeat; 
+  background: url("src/img/caoegato.jpg") center/cover no-repeat; 
   filter: brightness(0.6) saturate(0.8); /* Escurece e sutilmente dessatura */
   animation: bg-pan 30s infinite alternate linear; /* ANIMAÇÃO SUTIL */
 }
