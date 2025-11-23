@@ -7,7 +7,7 @@ function Benefits() {
 
       <div className="beneficios-grid">
         <div className="card paw-card">
-          <img src="/src/img/cao.jpeg" alt="Cachorro correndo" className="card-image" /> {/* Adicione sua imagem aqui */}
+          <img src="../img/cao.jpeg" alt="Cachorro correndo" className="card-image" /> {/* Adicione sua imagem aqui */}
           Entrega Super Rápida
         </div>
         <div className="card paw-card">
