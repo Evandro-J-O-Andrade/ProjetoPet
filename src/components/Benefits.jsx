@@ -14,7 +14,7 @@ function Benefits() {
       <div className="beneficios-grid">
         <div className="card paw-card">
           <img 
-            src=./img/cão.jpg
+            src={cao}
             alt="Cachorro correndo" 
             className="card-image" 
           />
