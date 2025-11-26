@@ -12,27 +12,22 @@ import About from "./components/About";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 
-// === IMPORTAÇÕES CORRETAS DAS IMAGENS ===
-import cao from "./img/cao.jpeg";
-import gato from "./img/gato.png";
-import filhotes from "./img/filhotes.jpeg";
-
-// --- DADOS CENTRAIS ---
+// --- DADOS CENTRAIS DA APLICAÇÃO ---
 const PRODUTOS = [
   { 
     nome: "Ração Super Premium Cães (15kg)", 
     preco: "R$ 199,90", 
-    image: cao
+    image: "/src/img/cao.jpeg" // <--- ADICIONADO AQUI
   },
   { 
     nome: "Ração Premium Gatos Adultos (10kg)", 
     preco: "R$ 89,90", 
-    image: gato
+    image: "/src/img/gato.png" // <--- ADICIONADO AQUI
   },
   { 
     nome: "Ração Filhotes Light (3kg)", 
     preco: "R$ 39,90", 
-    image: filhotes
+    image: "/src/img/filhotes.jpeg" // <--- ADICIONADO AQUI
   }
 ];
 
@@ -45,42 +40,54 @@ const DEPOIMENTOS = [
 const FAQS = [
   { pergunta: "Qual o prazo de entrega?", resposta: "Trabalhamos com entrega expressa em até 90 minutos, dependendo da região." },
   { pergunta: "Quais são as formas de pagamento?", resposta: "Pix, cartões de crédito e débito (na entrega) e dinheiro." },
-  { pergunta: "Vocês trabalham com rações especiais!?", resposta: "Sim! Possuímos linhas premium, super premium e terapêuticas." },
+  { pergunta: "Vocês trabalham com rações especiais?", resposta: "Sim! Possuímos linhas premium, super premium e terapêuticas." },
 ];
 
+// --- COMPONENTE PRINCIPAL APP ---
 function App() {
-  const whatsappNumber = "5511969037920";
+  const whatsappNumber = "5511969037920"; // Seu número
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
+  // Função central para abrir o WhatsApp
   const openWhats = (msg) => {
     const text = encodeURIComponent(msg);
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+    window.open(`https://wa.me/${whatsappNumber}?text!=${text}`, "_blank");
   };
 
+  // Função para o FAQ
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
   return (
     <div className="container">
+      {/* PASSANDO O openWhats */}
       <Header openWhats={openWhats} />
       <Hero openWhats={openWhats} />
+      
+      {/* BENEFÍCIOS não precisa de props, mas precisa do paw-card dentro dele */}
       <Benefits />
-
+      
+      {/* PASSANDO DADOS E openWhats */}
       <Products produtos={PRODUTOS} openWhats={openWhats} />
       <Offers openWhats={openWhats} />
-
+      
+      {/* PASSANDO DADOS */}
       <Testimonials depoimentos={DEPOIMENTOS} />
+      
       <About />
-
+      
+      {/* PASSANDO DADOS E LÓGICA DE ESTADO */}
       <Faq 
         faqs={FAQS} 
         openFaqIndex={openFaqIndex} 
         toggleFaq={toggleFaq} 
       />
-
+      
+      {/* O FOOTER NÃO RECEBE PROPS */}
       <Footer />
-
+      
+      {/* BOTÃO WHATS FLUTUANTE */}
       <button
         className="floating-whats"
         onClick={() => openWhats("Olá, pode me ajudar com um pedido?")}

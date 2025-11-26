@@ -1,16 +1,16 @@
 import React from "react";
 
 function Header({ openWhats }) {
+  // openWhats é recebida via prop do App.js
   return (
     <header className="header">
-      
-      {/* LOGO */}
       <div className="logo">
-        <span style={{ marginRight: '8px', fontSize: '1.5em' }}>🐾</span>
+        {/* LOGOMARCA COM EMOJI MAIOR */}
+        <span style={{ marginRight: '8px', fontSize: '1.5em' }}>🐾</span> 
+        {/* A propriedade fontSize: '1.5em' aumenta a pata em 50% */}
         Pet Rations Express
       </div>
 
-      {/* MENU */}
       <nav>
         <a href="#inicio">Início</a>
         <a href="#produtos">Produtos</a>
@@ -20,7 +20,6 @@ function Header({ openWhats }) {
         <a href="#faq">FAQ</a>
       </nav>
 
-      {/* BOTÃO WHATSAPP */}
       <button
         className="btn-whats"
         onClick={() => openWhats("Olá! Gostaria de fazer meu primeiro pedido.")}

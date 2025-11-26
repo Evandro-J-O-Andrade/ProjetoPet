@@ -7,18 +7,18 @@ function Faq({ faqs, openFaqIndex, toggleFaq }) {
       <h2>Dúvidas Rápidas</h2>
 
       <div className="faq-container">
-        {faqs.map((item, index) => (
-          <div key={index} className="faq-item paw-card">
+        {faqs.map((item, index) => ( // Usa a prop 'faqs'
+          <div key={index} className="faq-item paw-card"> {/* ADICIONADO paw-card AQUI */}
             <button
               className="faq-pergunta"
-              onClick={() => toggleFaq(index)}
+              onClick={() => toggleFaq(index)} // Usa a prop 'toggleFaq'
             >
               {item.pergunta}
-              <span className="faq-icone">
-                {openFaqIndex === index ? "−" : "+"}
-              </span>
+              {/* Usa a prop 'openFaqIndex' */}
+              <span className="faq-icone">{openFaqIndex === index ? "−" : "+"}</span>
             </button>
 
+            {/* Usa a prop 'openFaqIndex' */}
             {openFaqIndex === index && (
               <div className="faq-resposta">{item.resposta}</div>
             )}
