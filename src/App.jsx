@@ -19,6 +19,7 @@ import filhotes from "./assets/img/filhotes.jpeg";
 
 // --- DADOS CENTRAIS ---
 const PRODUTOS = [
+  
   { 
     nome: "Ração Super Premium Cães (15kg)", 
     preco: "R$ 199,90", 
