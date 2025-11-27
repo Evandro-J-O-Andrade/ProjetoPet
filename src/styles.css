@@ -23,9 +23,9 @@ html, body, #root {
 body {
   background-color: #0a0d12; /* Fundo escuro base */
   color: #f4f4f4; /* Cor do texto padrão */
-  background-image: url("./img/patinhas.jpg"); /* Patinhas no fundo do BODY */
+  background-image: url("/img/patinhas.jpg"); /* Patinhas no fundo do BODY (public/img) */
   background-repeat: repeat;
-  background-size: 160px;
+  background-size: 250px;
 }
 
 body::after {
@@ -46,8 +46,8 @@ body::after {
 
 /* Garante que todas as seções (além do footer) tenham fundo transparente e texto claro */
 section {
-    background: transparent;
-    color: #f4f4f4; 
+  background: transparent;
+  color: #f4f4f4;
 }
 
 /* =============================
@@ -99,22 +99,6 @@ section {
   box-shadow: 0 0 14px rgba(37,211,102,0.6);
 }
 
-
-/* =============================
-    TEMA DARK + PATINHAS (FUNDO)
-============================= */
-
-body {
-  background-color: #0a0d12;
-  color: #f4f4f4;
-  /* Patinhas no fundo do BODY, mais visíveis */
-  background-image: url("./img/patinhas.jpg");
-  background-repeat: repeat;
-  /* AUMENTAMOS O TAMANHO DA PATA AQUI */
-  background-size: 250px; 
-}
-
-/* ... (O restante do seu CSS continua o mesmo) ... */
 /* =============================
     HERO — COM IMAGEM DE CACHORRO E GATO
 ============================= */
@@ -138,16 +122,16 @@ body {
   position: absolute;
   inset: 0;
   z-index: -2;
-  /* Substitua 'banner.jpg' pela sua imagem de cães e gatos */
-  background: url("./img/caoegato.jpg") center/cover no-repeat; 
+  /* imagem de cães e gatos (public/img) */
+  background: url("/img/caoegato.jpg") center/cover no-repeat;
   filter: brightness(0.6) saturate(0.8); /* Escurece e sutilmente dessatura */
   animation: bg-pan 30s infinite alternate linear; /* ANIMAÇÃO SUTIL */
 }
 
 /* ANIMAÇÃO DE FUNDO DO HERO */
 @keyframes bg-pan {
-    from { background-position: 0% 0%; }
-    to { background-position: 100% 100%; }
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
 }
 
 .hero h1 {
@@ -196,7 +180,7 @@ body {
   background: rgba(255,255,255,0.1); /* Mais visível que 0.05 */
   border: 1px solid rgba(255,255,255,0.15); /* Borda mais forte */
   padding: 26px;
-  border-radius: 18px; 
+  border-radius: 18px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.6); /* Sombra mais intensa */
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
   backdrop-filter: blur(3px);
@@ -217,15 +201,14 @@ body {
 
 /* ESTILO PARA IMAGENS DENTRO DOS CARDS */
 .card-image {
-    width: 100px; /* Tamanho da imagem */
-    height: 100px;
-    border-radius: 50%; /* Imagem redonda */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
-    border: 3px solid #ffbf00; /* Borda amarela na imagem */
-    box-shadow: 0 0 10px rgba(255, 191, 0, 0.5); /* Brilho na imagem */
+  width: 100px; /* Tamanho da imagem */
+  height: 100px;
+  border-radius: 50%; /* Imagem redonda */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  margin-bottom: 15px; /* Espaçamento entre a imagem e o texto */
+  border: 3px solid #ffbf00; /* Borda amarela na imagem */
+  box-shadow: 0 0 10px rgba(255, 191, 0, 0.5); /* Brilho na imagem */
 }
-
 
 /* =============================
     BENEFÍCIOS - AJUSTE DE ESPAÇAMENTO
@@ -245,12 +228,11 @@ body {
   margin-top: 40px; /* Espaço abaixo do título */
 }
 
-.card { 
-    width: 250px; 
-    min-height: 200px; /* Altura mínima para os cards */
-    padding: 35px 25px; /* Mais padding */
+.card {
+  width: 250px;
+  min-height: 200px; /* Altura mínima para os cards */
+  padding: 35px 25px; /* Mais padding */
 }
-
 
 /* =============================
     PRODUTOS - AJUSTE DE ESPAÇAMENTO
@@ -291,8 +273,6 @@ body {
   margin: 15px 0;
 }
 
-/* ... (Resto do seu CSS, como Ofertas, Depoimentos, FAQ, Footer, etc.) ... */
-
 /* =============================
     OFERTAS / DEPOIMENTOS / FAQ - AJUSTE DE ESPAÇAMENTO
 ============================= */
@@ -306,24 +286,24 @@ body {
 
 /* DEPOIMENTOS */
 .depoimentos-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px; /* Espaçamento maior */
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px; /* Espaçamento maior */
+  margin-top: 40px;
 }
 .depoimento-card {
-    max-width: 350px;
-    padding: 30px;
+  max-width: 350px;
+  padding: 30px;
 }
 
 /* FAQ */
 .faq-container {
-    max-width: 800px;
-    margin-top: 40px;
+  max-width: 800px;
+  margin-top: 40px;
 }
 .faq-item {
-    margin-bottom: 15px; /* Espaçamento entre itens do FAQ */
+  margin-bottom: 15px; /* Espaçamento entre itens do FAQ */
 }
 
 /* =============================
@@ -331,7 +311,7 @@ body {
 ============================= */
 
 .footer {
-  background: #000; 
+  background: #000;
   padding: 40px;
   text-align: center;
   color: #ddd;
@@ -340,27 +320,26 @@ body {
 }
 
 .social-icons {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .social-icons a {
-    color: #00AEEF;
-    font-size: 28px;
-    margin: 0 18px;
-    transition: 0.3s ease-in-out;
-    display: inline-block;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
-                 0 0 10px #00AEEF;
+  color: #00AEEF;
+  font-size: 28px;
+  margin: 0 18px;
+  transition: 0.3s ease-in-out;
+  display: inline-block;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+               0 0 10px #00AEEF;
 }
 
 .social-icons a:hover {
-    color: #fff;
-    transform: scale(1.15);
-    text-shadow: 0 0 10px #fff,
-                 0 0 20px #00AEEF,
-                 0 0 30px #00AEEF;
+  color: #fff;
+  transform: scale(1.15);
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #00AEEF,
+               0 0 30px #00AEEF;
 }
-
 
 /* =============================
     WHATSAPP FLOAT
@@ -410,18 +389,18 @@ body {
     max-width: 400px; /* Limita largura máxima no mobile */
     margin: 10px auto; /* Centraliza */
   }
-}/* =============================
+}
+
+/* =============================
     CARDS (MODELO BASE)
 ============================= */
 .paw-card {
-  /* ... (outras propriedades) ... */
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza itens na horizontal (para a maioria dos cards) */
   justify-content: center;
   text-align: center; /* CENTRALIZA O TEXTO DENTRO DO CARD */
-  color: #f4f4f4; 
-  /* ... (outras propriedades) ... */
+  color: #f4f4f4;
 }
 
 /* Garante que o texto nas seções de conteúdo também esteja centralizado (títulos e parágrafos) */
@@ -430,19 +409,21 @@ body {
 .depoimentos,
 .sobre,
 .faq {
-    text-align: center; /* Garante que os H2 e P estejam centralizados */
+  text-align: center; /* Garante que os H2 e P estejam centralizados */
 }
 
 /* FAQ é uma exceção onde o conteúdo interno do item deve ser alinhado */
 .faq-container {
-    text-align: left; /* O CONTAINER GERAL DO FAQ DEVE TER TEXTO ALINHADO À ESQUERDA */
-    /* O texto dentro de .faq-resposta e .faq-pergunta deve estar alinhado à esquerda */
-}/* =============================
+  text-align: left; /* O CONTAINER GERAL DO FAQ DEVE TER TEXTO ALINHADO À ESQUERDA */
+  /* O texto dentro de .faq-resposta e .faq-pergunta deve estar alinhado à esquerda */
+}
+
+/* =============================
     OFERTAS - ESTILO DA CAIXA E IMAGEM
 ============================= */
 
 .ofertas {
-    padding: 70px 40px;
+  padding: 70px 40px;
 }
 
 .oferta-box {
@@ -450,230 +431,222 @@ body {
   max-width: 650px; /* Aumentamos o tamanho da caixa de oferta */
   margin: 40px auto;
   padding: 30px;
-  
+
   /* Permite que a imagem e o texto fiquem na mesma linha */
-  display: flex; 
+  display: flex;
   align-items: center; /* Alinha verticalmente */
   justify-content: center; /* Centraliza horizontalmente */
   gap: 25px; /* Espaço entre a imagem e o texto */
-  
+
   font-size: 1.2em; /* Texto maior para a oferta */
   text-align: left; /* Alinha o texto da oferta à esquerda */
 }
 
 /* Estilo para a imagem dentro da caixa de oferta */
 .oferta-image {
-    width: 50%; /* Tamanho do ícone/imagem */
-    height: 50%;
-    object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0; /* Impede a imagem de encolher */
+  width: 50%; /* Tamanho do ícone/imagem */
+  height: 50%;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0; /* Impede a imagem de encolher */
 }
 
 /* =============================
     SEÇÃO SOBRE NÓS (ABOUT)
 ============================= */
 .sobre {
-    padding: 70px 40px;
-    text-align: center;
+  padding: 70px 40px;
+  text-align: center;
 }
 
 .about-content {
-    /* Limitamos a largura máxima para o texto não ficar muito longo */
-    max-width: 750px; 
-    margin: 40px auto; /* Centraliza a caixa */
-    padding: 40px; 
-    
-    /* Configurações de layout flex para alinhar o ícone e o texto */
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-icon {
-    width: 80px; /* Tamanho do ícone de coração/pata */
-    height: 80px;
-    margin-bottom: 20px;
+  width: 80px; /* Tamanho do ícone de coração/pata */
+  height: 80px;
+  margin-bottom: 20px;
 }
+
 /* =============================
     SEÇÃO FAQ (Dúvidas Rápidas)
 ============================= */
 
 .faq {
-    padding: 70px 40px;
-    text-align: center; /* Centraliza apenas o <h2> */
+  padding: 70px 40px;
+  text-align: center; /* Centraliza apenas o <h2> */
 }
 
 .faq-container {
-    max-width: 850px; /* Define uma largura máxima para o bloco */
-    margin: 40px auto; /* Centraliza o container na página */
+  max-width: 850px; /* Define uma largura máxima para o bloco */
+  margin: 40px auto; /* Centraliza o container na página */
 }
 
 .faq-item {
-    margin-bottom: 15px; /* Espaço entre cada card de FAQ */
-    /* O paw-card já cuida do fundo e brilho, mas vamos redefinir o layout: */
-    padding: 0; /* Remove padding padrão para o botão preencher */
-    overflow: hidden; 
-    text-align: left; /* FUNDAMENTAL: Alinha o texto da pergunta e resposta à esquerda */
-    display: block; /* Anula o display: flex padrão do paw-card */
+  margin-bottom: 15px; /* Espaço entre cada card de FAQ */
+  padding: 0; /* Remove padding padrão para o botão preencher */
+  overflow: hidden;
+  text-align: left;
+  display: block;
 }
 
 .faq-pergunta {
-    width: 100%;
-    padding: 20px 25px;
-    background: transparent; /* Usa o fundo do paw-card */
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #f4f4f4;
-    
-    /* Layout da Pergunta: Texto à esquerda e Ícone à direita */
-    display: flex;
-    justify-content: space-between; /* Espalha a pergunta e o ícone */
-    align-items: center;
-    text-align: left; /* Garante que o texto da pergunta comece na esquerda */
+  width: 100%;
+  padding: 20px 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #f4f4f4;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
 }
 
 .faq-pergunta:hover {
-    background: rgba(255, 255, 255, 0.05); /* Efeito sutil no hover */
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .faq-icone {
-    font-size: 1.5em;
-    font-weight: 300;
-    color: #ffbf00; /* Cor amarela para o ícone de + / - */
-    min-width: 20px; /* Garante que o ícone tenha espaço */
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #ffbf00;
+  min-width: 20px;
 }
 
 .faq-resposta {
-    padding: 0 25px 20px 25px; /* Padding nas laterais e embaixo (o topo é a pergunta) */
-    font-size: 1em;
-    opacity: 0.8;
-    max-height: 500px; /* Necessário para a animação de abrir/fechar */
-    transition: all 0.4s ease-out;
-}/* =============================
+  padding: 0 25px 20px 25px;
+  font-size: 1em;
+  opacity: 0.8;
+  max-height: 500px;
+  transition: all 0.4s ease-out;
+}
+
+/* =============================
     AJUSTE NO BOTÃO CTA SECUNDÁRIO (PRODUTOS)
 ============================= */
 
 .cta-secundario {
-    /* Adiciona uma margem superior para afastar o botão da lista de produtos */
-    margin-top: 50px; 
-    /* Outros estilos CTA que você já deve ter */
-    padding: 14px 34px;
-    border-radius: 999px;
-    border: 2px solid #ffbf00; /* Exemplo: borda amarela */
-    background: transparent;
-    color: #ffbf00;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 50px;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: 2px solid #ffbf00;
+  background: transparent;
+  color: #ffbf00;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .cta-secundario:hover {
-    background: #ffbf00;
-    color: #000;
+  background: #ffbf00;
+  color: #000;
 }
+
 /* =============================
-    RESPONSIVIDADE GERAL
+    RESPONSIVIDADE GERAL (FINAL)
 ============================= */
 
 @media (max-width: 768px) {
-    /* 1. LAYOUT GERAL E SEÇÕES */
-    
-    /* Reduz o padding lateral em todas as seções para celular */
-    .header,
-    .beneficios,
-    .produtos,
-    .ofertas,
-    .depoimentos,
-    .sobre,
-    .faq,
-    .footer {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+  /* 1. LAYOUT GERAL E SEÇÕES */
+  .header,
+  .beneficios,
+  .produtos,
+  .ofertas,
+  .depoimentos,
+  .sobre,
+  .faq,
+  .footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-    /* 2. HEADER */
-    .header {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        /* Garante que o header fique compacto */
-        gap: 10px; 
-    }
+  /* 2. HEADER */
+  .header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 10px;
+  }
 
-    .logo {
-        font-size: 20px; /* Logo menor */
-    }
+  .logo {
+    font-size: 20px;
+  }
 
-    /* Esconde o menu de navegação, pois ele não caberia em telas pequenas */
-    .header nav {
-        display: none;
-    }
+  .header nav {
+    display: none;
+  }
 
-    .btn-whats {
-        font-size: 0.8em;
-        padding: 8px 14px;
-        white-space: nowrap; /* Evita que o texto quebre */
-    }
+  .btn-whats {
+    font-size: 0.8em;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
 
-    /* 3. HERO */
-    .hero {
-        min-height: 400px;
-        padding: 80px 15px; /* Reduz o padding vertical */
-    }
+  /* 3. HERO */
+  .hero {
+    min-height: 400px;
+    padding: 80px 15px;
+  }
 
-    .hero h1 { 
-        font-size: 2.2em; /* Título menor */
-    }
-    .hero p {
-        font-size: 1em;
-    }
+  .hero h1 {
+    font-size: 2.2em;
+  }
 
-    /* 4. GRID DE CARDS (PRODUTOS, BENEFÍCIOS, DEPOIMENTOS) */
-    .beneficios-grid,
-    .lista-produtos,
-    .depoimentos-grid {
-        flex-direction: column; /* Coloca cards um abaixo do outro */
-        align-items: center;
-        gap: 25px; 
-    }
-    
-    /* Garante que todos os cards preencham a largura da tela (com limite) */
-    .produto-card,
-    .card,
-    .depoimento-card,
-    .oferta-box,
-    .faq-item {
-        width: 100%; /* Ocupa 100% da largura do container */
-        max-width: 450px; /* Limita a largura máxima */
-        margin: 10px auto; 
-    }
-    
-    /* 5. SEÇÃO DE OFERTAS (Verticalização) */
-    .oferta-box {
-        flex-direction: column; /* Coloca a imagem em cima e o texto embaixo */
-        text-align: center; /* Centraliza o texto */
-    }
-    .oferta-image {
-        /* Garante que a imagem/ícone da oferta tenha um tamanho decente */
-        width: 80px; 
-        height: 80px;
-        margin-bottom: 15px;
-    }
+  .hero p {
+    font-size: 1em;
+  }
 
-    /* 6. SOBRE NÓS */
-    .about-content {
-        padding: 25px 20px;
-    }
+  /* 4. GRID DE CARDS (PRODUTOS, BENEFÍCIOS, DEPOIMENTOS) */
+  .beneficios-grid,
+  .lista-produtos,
+  .depoimentos-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
 
-    /* 7. FAQ */
-    .faq-pergunta {
-        font-size: 1em; /* Fonte um pouco menor */
-        padding: 18px 20px;
-    }
-    .faq-resposta {
-        padding: 0 20px 18px 20px;
-    }
+  .produto-card,
+  .card,
+  .depoimento-card,
+  .oferta-box,
+  .faq-item {
+    width: 100%;
+    max-width: 450px;
+    margin: 10px auto;
+  }
+
+  .oferta-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .oferta-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+
+  .about-content {
+    padding: 25px 20px;
+  }
+
+  .faq-pergunta {
+    font-size: 1em;
+    padding: 18px 20px;
+  }
+
+  .faq-resposta {
+    padding: 0 20px 18px 20px;
+  }
 }

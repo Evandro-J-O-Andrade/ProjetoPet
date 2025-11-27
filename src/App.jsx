@@ -13,9 +13,9 @@ import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 
 // === IMPORTAÇÕES CORRETAS DAS IMAGENS ===
-import cao from "./img/cao.jpeg";
-import gato from "./img/gato.png";
-import filhotes from "./img/filhotes.jpeg";
+import cao from "./assets/img/cao.jpeg";
+import gato from "./assets/img/gato.png";
+import filhotes from "./assets/img/filhotes.jpeg";
 
 // --- DADOS CENTRAIS ---
 const PRODUTOS = [

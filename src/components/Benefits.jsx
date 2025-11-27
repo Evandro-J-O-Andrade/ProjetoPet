@@ -1,10 +1,10 @@
 import React from "react";
 
-// Importações corretas para Vite
-import cao from "../img/cao.jpeg";
-import cao2 from "../img/cao2.jpg";
-import coracaopata from "../img/coracaopata.png";
-import cachorro from "../img/cachorro.jpg";
+// Caminhos CORRETOS usando src/assets/img/
+import cao from "../assets/img/cao.jpeg";
+import cao2 from "../assets/img/cao2.jpg";
+import coracaopata from "../assets/img/coracaopata.png";
+import cachorro from "../assets/img/cachorro.jpg";
 
 function Benefits() {
   return (

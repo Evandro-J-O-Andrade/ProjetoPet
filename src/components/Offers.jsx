@@ -1,5 +1,5 @@
 import React from "react";
-import aminais from "../img/aminais.png";   // <-- IMPORTANDO A IMAGEM
+import aminais from "../assets/img/aminais.png"; // Caminho corrigido
 
 function Offers({ openWhats }) {
   return (
@@ -7,9 +7,8 @@ function Offers({ openWhats }) {
       <h2>Aproveite Enquanto Dura!</h2>
 
       <div className="oferta-box paw-card">
-
-        <img 
-          src={aminais}     // <-- USANDO A IMAGEM IMPORTADA
+        <img
+          src={aminais}
           alt="Oferta Especial de Ração"
           className="oferta-image"
         />
@@ -20,7 +19,9 @@ function Offers({ openWhats }) {
 
       <button
         className="cta"
-        onClick={() => openWhats("Quero aproveitar a oferta de Ração Premium!")}
+        onClick={() =>
+          openWhats("Quero aproveitar a oferta de Ração Premium!")
+        }
       >
         Eu Quero Minha Oferta
       </button>

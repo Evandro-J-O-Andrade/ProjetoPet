@@ -1,5 +1,5 @@
 import React from "react";
-import patacorcao from "../img/patacorcao.jpg"; // Caminho correto
+import patacorcao from "../assets/img/patacorcao.jpg"; // Caminho correto
 
 function About() {
   return (
