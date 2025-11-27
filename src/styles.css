@@ -446,6 +446,12 @@ section {
   margin-bottom: 15px;
   object-fit: cover; /* Para as imagens reais */
 }
+.produto-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
 .preco {
   font-size: 24px; /* Preço um pouco maior */
@@ -832,4 +838,176 @@ section {
   .faq-resposta {
     padding: 0 20px 18px 20px;
   }
+}
+/* ==================================== */
+/* 1. Estilos Padrão (Desktop First) */
+/* ==================================== */
+
+/* Garante que o menu hamburguer fique escondido no desktop */
+.header .menu-toggle {
+    display: none; 
+}
+
+/* ==================================== */
+/* 2. Media Query (Mobile - Máximo 768px) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    
+    /* Configuração do Header no Mobile */
+    .header {
+        /* Permite que o menu abra por baixo do header fixo */
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 15px 20px;
+        /* Alinha logo à esquerda e botão de whats/menu à direita */
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    /* Oculta o botão de WhatsApp no menu hamburguer fechado, se preferir */
+    .header .btn-whats {
+        display: none; 
+    }
+
+    /* Estilo do Botão Hamburguer */
+    .header .menu-toggle {
+        display: block; /* Mostra o botão hamburguer */
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        color: var(--cor-primaria); 
+        cursor: pointer;
+        z-index: 1001; /* Garante que fique acima de tudo */
+    }
+
+    /* Estilo da Navegação (NAV) */
+    .header nav {
+        display: none; /* Esconde o menu por padrão */
+        flex-direction: column; /* Coloca os links na vertical */
+        position: absolute;
+        top: 100%; /* Começa logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* Fundo branco ou cor do seu header */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+    }
+
+    /* Quando o estado 'active' é ativado no React, o menu aparece */
+    .header nav.active {
+        display: flex;
+    }
+
+    /* Estilo dos Links no Menu Mobile */
+    .header nav a {
+        padding: 15px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        font-size: 1.1em;
+        /* Garante que o usuário veja a área clicável */
+    }
+
+    /* Remove a borda do último item */
+    .header nav a:last-child {
+        border-bottom: none;
+    }
+}/* =============================
+    RESPONSIVIDADE
+============================= */
+
+@media (max-width: 768px) {
+    /* 1. LAYOUT GERAL E SEÇÕES */
+    .header,
+    .beneficios,
+    .produtos,
+    .ofertas,
+    .depoimentos,
+    .sobre,
+    .faq,
+    .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* 2. HEADER - Deixando mais LEVE e Menor */
+    .header {
+        /* Reduzindo o padding vertical (mais leve) */
+        padding-top: 10px; 
+        padding-bottom: 10px;
+        /* Garante que o header cubra a tela e fique no topo */
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        /* Fundo semi-transparente para o header fixo */
+        background: rgba(0, 0, 0, 0.8); 
+    }
+    
+    /* Garantir que o logo fique menor */
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Estilo do Botão Hamburguer - Mostra apenas no mobile */
+    .header .menu-toggle {
+        display: block; 
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        color: #ffbf00; /* Cor de destaque (amarelo) */
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
+    /* Ocultar o botão de WhatsApp e a navegação padrão */
+    .header .btn-whats,
+    .header nav {
+        display: none; 
+    }
+
+    /* 3. ESTILO DA NAVEGAÇÃO MOBILE - CORREÇÃO DE FUNDO E TAMANHO */
+    .header nav {
+        flex-direction: column; 
+        position: absolute;
+        top: 100%; /* Começa logo abaixo do header */
+        left: 0;
+        width: 100%;
+        
+        /* FUNDO ESCURO E TRANSPARENTE (COMO SOLICITADO) */
+        background: rgba(10, 13, 18, 0.397); /* Cor do body com transparência */
+        backdrop-filter: blur(5px); /* Adiciona um blur para destacar */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+        padding: 0; 
+    }
+
+    /* Quando o estado 'active' é ativado no React, o menu aparece */
+    .header nav.active {
+        display: flex;
+    }
+
+    /* Estilo dos Links no Menu Mobile - CORREÇÃO DE TAMANHO DO TEXTO/PADDING */
+    .header nav a {
+        /* Reduzindo o padding e o tamanho da fonte */
+        padding: 12px 20px; 
+        font-size: 1em; /* Fonte menor */
+        width: 100%;
+        text-align: left; /* Alinha o texto à esquerda para leitura fácil */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Borda sutil */
+        color: #f4f4f4; /* Texto claro */
+        margin: 0;
+    }
+
+    /* Hover/Focus nos links do mobile */
+    .header nav a:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffbf00;
+    }
+    
+    /* ... (Mantenha o restante das suas media queries para hero, grids, etc.) ... */
 }
