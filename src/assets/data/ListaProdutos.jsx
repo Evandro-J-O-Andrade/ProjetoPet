@@ -91,7 +91,7 @@ const ListaProdutos = [
     preco: "R$ 89,90",
     image: petiscos, // ← usa a foto das caminhas (fundo branco bonito, combina com tapete)
     descricao: "Tapete higiênico reutilizável, absorve até 1 litro. Economize com fraldas!",
-    beneficios: ["Lavável na máquina", "Base antiderrapante", "Economia de até 80%"]
+    beneficios: ["Lavável na máquina", "Base antiderrapante", "Economia, de até 80%"]
   }
 ];
 
