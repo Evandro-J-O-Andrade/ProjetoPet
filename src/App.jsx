@@ -11,6 +11,8 @@ import Testimonials from "./components/Testimonials";
 import About from "./components/About";
 import Faq from "./components/Faq";
 import Footer from "./components/Footer";
+// === IMPORTAÇÃO DO NOVO COMPONENTE DE CATÁLOGO ===
+import Catalogo from "./components/Catalogo";
 
 // === IMPORTAÇÕES CORRETAS DAS IMAGENS ===
 import cao from "./assets/img/cao.jpeg";
@@ -19,7 +21,6 @@ import filhotes from "./assets/img/filhotes.jpeg";
 
 // --- DADOS CENTRAIS ---
 const PRODUTOS = [
-  
   { 
     nome: "Ração Super Premium Cães (15kg)", 
     preco: "R$ 199,90", 
@@ -52,6 +53,8 @@ const FAQS = [
 function App() {
   const whatsappNumber = "5511969037920";
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  // === ESTADO PARA CONTROLE DE PÁGINA (HOME vs CATÁLOGO) ===
+  const [currentPage, setCurrentPage] = useState('home'); 
 
   const openWhats = (msg) => {
     const text = encodeURIComponent(msg);
@@ -61,25 +64,53 @@ function App() {
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
+  
+  // === FUNÇÃO PARA NAVEGAR ENTRE AS PÁGINAS ===
+  const navigateTo = (page) => {
+      setCurrentPage(page);
+  };
 
-  return (
-    <div className="container">
-      <Header openWhats={openWhats} />
+  const renderHome = () => (
+    <>
       <Hero openWhats={openWhats} />
       <Benefits />
+      
+      {/* PASSANDO A FUNÇÃO DE NAVEGAÇÃO PARA O PRODUCTS */}
+      <Products 
+        produtos={PRODUTOS} 
+        openWhats={openWhats} 
+        navigateTo={navigateTo} // Novo Prop
+      />
 
-      <Products produtos={PRODUTOS} openWhats={openWhats} />
       <Offers openWhats={openWhats} />
-
       <Testimonials depoimentos={DEPOIMENTOS} />
       <About />
-
       <Faq 
         faqs={FAQS} 
         openFaqIndex={openFaqIndex} 
         toggleFaq={toggleFaq} 
       />
+    </>
+  );
 
+  return (
+    <div className="container">
+      <Header 
+        openWhats={openWhats} 
+        navigateTo={navigateTo} // Passando para o Header para voltar para Home
+      />
+
+      {/* RENDERIZAÇÃO CONDICIONAL */}
+      {currentPage === 'home' ? (
+          renderHome()
+      ) : (
+          // RENDERIZAÇÃO DO NOVO CATÁLOGO
+          <Catalogo 
+            openWhats={openWhats} 
+            navigateTo={navigateTo} // Opcional, para incluir um botão 'Voltar'
+          />
+      )}
+      
       <Footer />
 
       <button

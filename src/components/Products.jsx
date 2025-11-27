@@ -1,42 +1,22 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import React from "react";
 import "../styles.css";
+// ListaProdutos e useState, etc., não são mais necessários aqui, pois o carrossel foi removido.
+// import ListaProdutos from "../data/ListaProdutos"; 
 
-function Products({ produtos, openWhats }) {
-  const [showCarousel, setShowCarousel] = useState(false);
+// Adicionamos 'navigateTo' nos props
+function Products({ produtos, openWhats, navigateTo }) { 
 
-  // fallback caso produtos esteja vazio
-  const produtosTest = produtos && produtos.length > 0
-    ? produtos
-    : Array.from({ length: 8 }).map((_, i) => ({
-        nome: `Produto ${i + 1}`,
-        preco: `R$${(i + 1) * 50}`,
-        image: "https://via.placeholder.com/200x160",
-      }));
-
-  const promoProducts = produtosTest.slice(0, 4);
-  const moreProducts = produtosTest.slice(4);
-
-  const settings = {
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "0px",
-    arrows: true,
-    focusOnSelect: true,
-  };
+  // Todos os estados e funções relacionados ao carrossel (showCarousel, currentIndex, 
+  // next, prev, getPositionStyle) foram removidos para simplificar o componente.
 
   return (
     <section id="produtos" className="produtos">
-      <h2>Produtos em Promoção</h2>
+      <h2>Produtos em Destaque</h2>
 
+      {/* 3 produtos fixos */}
       <div className="lista-produtos">
-        {promoProducts.map((p, i) => (
-          <div key={i} className="produto-card paw-card">
+        {produtos.map((p, i) => (
+          <div key={i} className="produto-card paw-card" style={{background: "transparent"}}>
             <img src={p.image} alt={p.nome} className="produto-img" />
             <h3>{p.nome}</h3>
             <p className="preco">{p.preco}</p>
@@ -52,38 +32,19 @@ function Products({ produtos, openWhats }) {
         ))}
       </div>
 
+      {/* Botão de navegação para o Catálogo */}
       <div style={{ textAlign: "center", marginTop: "20px" }}>
         <button
           className="btn-ver-mais"
-          onClick={() => setShowCarousel(!showCarousel)}
+          // CHAMA A FUNÇÃO navigateTo PASSADA PELO App.jsx
+          onClick={() => navigateTo('catalogo')}
         >
-          {showCarousel ? "Fechar" : "Veja mais produtos"}
+          Veja todos os produtos no Catálogo
         </button>
       </div>
 
-      {showCarousel && (
-        <div className="carrossel-slick">
-          <Slider {...settings}>
-            {moreProducts.map((p, i) => (
-              <div key={i}>
-                <div className="produto-card paw-card">
-                  <img src={p.image} alt={p.nome} className="produto-img" />
-                  <h3>{p.nome}</h3>
-                  <p className="preco">{p.preco}</p>
-                  <button
-                    className="btn-produto"
-                    onClick={() =>
-                      openWhats(`Olá! Quero comprar: ${p.nome} - ${p.preco}`)
-                    }
-                  >
-                    Pedir pelo Whats
-                  </button>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      )}
+      {/* A seção do Carrossel 3D ({showCarousel && (...)}) foi completamente removida.
+      */}
     </section>
   );
 }

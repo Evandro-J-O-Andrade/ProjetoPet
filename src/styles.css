@@ -199,6 +199,108 @@ section {
   background: rgba(255, 255, 255, 0.15); /* Fundo um pouco mais claro no hover */
 }
 
+.produtos {
+  padding: 20px;
+  text-align: center;
+  background-color: transparent; /* fundo transparente */
+}
+
+.lista-produtos {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.produto-card {
+  background: transparent; /* fundo transparente */
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* sombra leve */
+  width: 180px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.produto-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-produto,
+.btn-ver-mais {
+  padding: 10px 18px;
+  margin-top: 10px;
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Carrossel 3D */
+.carrossel-3d-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1500px;
+  margin-top: 30px;
+  overflow: visible;
+  background: transparent; /* fundo transparente */
+}
+
+.carrossel-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carrossel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 280px;
+  margin: -140px 0 0 -100px;
+  text-align: center;
+  border-radius: 12px;
+  transition: transform 1s, z-index 1s;
+  background: transparent; /* fundo transparente */
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: #25d366;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carrossel-btn.left {
+  left: 10px;
+}
+
+.carrossel-btn.right {
+  right: 10px;
+}
+
 /* ESTILO PARA IMAGENS DENTRO DOS CARDS */
 .card-image {
   width: 100px; /* Tamanho da imagem */
@@ -233,7 +335,86 @@ section {
   min-height: 200px; /* Altura mínima para os cards */
   padding: 35px 25px; /* Mais padding */
 }
+/* =============================
+    CATÁLOGO COMPLETO
+============================= */
 
+/* Container da página de catálogo */
+.catalogo-completo {
+    padding: 70px 40px;
+    text-align: center;
+    min-height: 80vh; /* Garante que o catálogo ocupe a maior parte da tela */
+}
+
+/* Área de Filtros e Busca */
+.catalogo-filtros {
+    max-width: 600px;
+    margin: 40px auto 30px auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.input-busca {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo sutilmente escuro */
+    color: #f4f4f4;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.input-busca::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-busca:focus {
+    outline: none;
+    border-color: #ffbf00; /* Borda amarela ao focar */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Grid de Produtos (usaremos o mesmo estilo .lista-produtos, mas com mais colunas) */
+.catalogo-grid {
+    display: grid;
+    /* Tenta 3 colunas em telas maiores, mínimo de 280px por card */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center; /* Centraliza os itens no grid */
+}
+
+/* Estilo do Card no Catálogo (reutilizando .produto-card) */
+.catalogo-card {
+    /* Garante que o card se ajuste ao grid, mas respeite a largura do produto-card */
+    width: 100%; 
+    max-width: 280px; 
+}
+
+.sem-produtos {
+    margin-top: 50px;
+    font-size: 1.2em;
+    opacity: 0.7;
+}
+
+/* =============================
+    RESPONSIVIDADE PARA CATÁLOGO
+============================= */
+@media (max-width: 768px) {
+    .catalogo-filtros {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+    
+    .catalogo-grid {
+        /* Apenas 1 coluna grande em telas muito pequenas */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 20px;
+    }
+}
 /* =============================
     PRODUTOS - AJUSTE DE ESPAÇAMENTO
 ============================= */
@@ -340,7 +521,9 @@ section {
                0 0 20px #00AEEF,
                0 0 30px #00AEEF;
 }
-
+.icon {
+  vertical-align: middle;
+}
 /* =============================
     WHATSAPP FLOAT
 ============================= */

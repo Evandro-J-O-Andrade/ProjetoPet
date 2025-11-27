@@ -1,44 +1,40 @@
 import React from "react";
+import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import "../styles.css"; // certifique-se de ter um CSS para estilizar
 
 function Footer() {
   return (
     <footer className="footer">
-
       {/* Ícones de Redes Sociais */}
       <div className="social-icons">
-        
-        {/* Instagram */}
-        <a 
-          href="https://instagram.com/seuusuario" 
-          target="_blank" 
+        <a
+          href="https://instagram.com/seuusuario"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-instagram"></i>
+          <FaInstagram className="icon" />
         </a>
 
-        {/* Facebook */}
-        <a 
-          href="https://facebook.com/seupagina" 
-          target="_blank" 
+        <a
+          href="https://facebook.com/seupagina"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-facebook-f"></i>
+          <FaFacebookF className="icon" />
         </a>
 
-        {/* WhatsApp */}
-        <a 
-          href="https://wa.me/5511969037920" 
-          target="_blank" 
+        <a
+          href="https://wa.me/5511969037920"
+          target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fa-brands fa-whatsapp"></i>
+          <FaWhatsapp className="icon" />
         </a>
       </div>
 
       <p>Pet Rations Express • Entregas rápidas na sua cidade</p>
       <p>© 2025 Todos os direitos reservados.</p>
       <p>Desenvolvido por Evandro Andrade</p>
-
     </footer>
   );
 }
