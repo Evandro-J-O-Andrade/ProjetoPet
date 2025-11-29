@@ -13,7 +13,7 @@ import petiscos from "../img/produto11.jpg";         // NOVO PRODUTO 11
 const ListaProdutos = [
   {
     id: 1,
-    nome: "Ração Premium Cães Special Dog (15kg)",
+    nome: "Ração Premium Cães Special Dog (15,kg)",
     preco: "R$ 199,90",
     image: specialDog,
     descricao: "Alimento completo Special Dog Premium, rico em proteínas de carne e frango.",
