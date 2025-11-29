@@ -1010,4 +1010,42 @@ section {
     }
     
     /* ... (Mantenha o restante das suas media queries para hero, grids, etc.) ... */
+}.footer {
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+}
+
+.footer-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* garante responsividade */
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.social-item .icon {
+  font-size: 28px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+.social-item:hover {
+  transform: scale(1.1);
+  color: #00d5ff; /* muda a cor no hover */
 }

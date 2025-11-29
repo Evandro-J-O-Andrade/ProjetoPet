@@ -1,34 +1,42 @@
 import React from "react";
 import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
-import "../styles.css"; // certifique-se de ter um CSS para estilizar
+import "../styles.css";
 
 function Footer() {
   return (
     <footer className="footer">
-      {/* Ícones de Redes Sociais */}
-      <div className="social-icons">
-        <a
-          href="https://instagram.com/seuusuario"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram className="icon" />
-        </a>
+      
+      <h3 className="footer-title">Siga-nos nas Redes Sociais</h3>
 
+      <div className="social-row">
         <a
           href="https://facebook.com/seupagina"
           target="_blank"
           rel="noopener noreferrer"
+          className="social-item"
         >
           <FaFacebookF className="icon" />
+          <span>Facebook</span>
+        </a>
+
+        <a
+          href="https://instagram.com/seuusuario"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-item"
+        >
+          <FaInstagram className="icon" />
+          <span>Instagram</span>
         </a>
 
         <a
           href="https://wa.me/5511969037920"
           target="_blank"
           rel="noopener noreferrer"
+          className="social-item"
         >
           <FaWhatsapp className="icon" />
+          <span>WhatsApp</span>
         </a>
       </div>
 
