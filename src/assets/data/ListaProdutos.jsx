@@ -1,12 +1,12 @@
 // src/assets/data/ListaProdutos.jsx
 
 import specialDog from "../img/produto8.jpg";;
-import caminhas from "../img/produto1.JPG";;
-import coleiras from "../img/produto5.JPG";
-import acessorios from "../img/acessorios.AVIF";          // mantive o .AVIF que você tem
-import casinhaViagem from "../img/produto3.JPG";    // nome exato que você tem
+import caminhas from "../img/produto1.jpg";;
+import coleiras from "../img/produto5.jpg";
+import acessorios from "../img/acessorios.avif";          // mantive o .AVIF que você tem
+import casinhaViagem from "../img/produto3.jpg";    // nome exato que você tem
 import racaogatos from "../img/produto7.png";
-import filhotesImg from "../img/produto6.JPG";               // A SUA IMAGEM REAL
+import filhotesImg from "../img/produto6.jpg";               // A SUA IMAGEM REAL
 import racaogato from "../img/produto10.jpg";         // NOVO PRODUTO 9
 import racaocachorro   from  "../img/produto9.jpg";     // NOVO PRODUTO 10
 import petiscos from "../img/produto11.jpg";         // NOVO PRODUTO 11
