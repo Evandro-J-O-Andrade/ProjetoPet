@@ -99,7 +99,9 @@ function App() {
         openWhats={openWhats} 
         navigateTo={navigateTo} // Passando para o Header para voltar para Home
       />
-
+        <div id="inicio">
+          
+        </div>
       {/* RENDERIZAÇÃO CONDICIONAL */}
       {currentPage === 'home' ? (
           renderHome()
