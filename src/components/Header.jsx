@@ -27,25 +27,32 @@ function Header({ openWhats, navigateTo }) {
     };
 
     // Função para Início e Logo (rolar para o topo) - AGORA LIMPA O HASH
- const handleHomeClick = (e) => {
+    const handleHomeClick = (e) => {
         e.preventDefault();
-
-        setIsMenuOpen(false);
-        navigateTo("home");
-
-        const el = document.querySelector("#inicio");
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "start" });
-        } else {
-            window.scrollTo({ top: 0, behavior: "smooth" });
+        
+        if (navigateTo) {
+            navigateTo('home');
         }
-    };
+        
+        setIsMenuOpen(false); 
+
+        setTimeout(() => {
+             // Força a rolagem no topo
+             window.scrollTo({ top: 0, behavior: 'smooth' }); 
+             document.documentElement.scrollTop = 0; 
+             document.body.scrollTop = 0;           
+             
+             // CORREÇÃO: Limpa o hash da URL (deixando apenas '/')
+             window.location.hash = '#inicio'; 
+        }, 50);
+    }
+    
     return (
         <header className="header">
             
             {/* LOGO */}
             <div 
-                className="logo"    
+                className="logo" 
                 onClick={handleHomeClick} // Usa handleHomeClick
                 style={{ cursor: 'pointer' }}
             >
